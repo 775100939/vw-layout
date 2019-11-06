@@ -1,0 +1,101 @@
+@import "./lib/common";
+
+.am-tab-bar-bar {
+  align-items: flex-start;
+
+  .am-tab-bar-tab {
+    height: 100%;
+
+    .am-tab-bar-tab-icon {
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .am-tab-bar-tab-title {
+      @include font-size(10px)
+    }
+  }
+}
+
+.tab-icon {
+  @include icon-pro;
+  width: 52px;
+  height: 42px;
+}
+
+.icon-index {
+  @extend .tab-icon;
+  background: {
+    image: url("../images/index/dt.png");
+    size: 40px 42px;
+  }
+}
+
+.icon-index.selected {
+  background: {
+    image: url("../images/index/dt-s.png");
+  };
+}
+
+.icon-result {
+  @extend .tab-icon;
+  background: {
+    image: url("../images/index/bf.png");
+    size: 52px 36px;
+  }
+}
+
+.icon-result.selected {
+  background: {
+    image: url("../images/index/bf-s.png");
+  };
+}
+
+.icon-follow {
+  @extend .tab-icon;
+  width: 100%;
+  position: relative;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 97px;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 99;
+
+    img {
+      width: 110px;
+      height: 97px;
+    }
+  }
+}
+
+.icon-lottery {
+  @extend .tab-icon;
+  background: {
+    image: url("../images/index/kj.png");
+    size: 38px 42px;
+  }
+}
+
+.icon-lottery.selected {
+  background: {
+    image: url("../images/index/kj-s.png");
+  };
+}
+
+.icon-personal {
+  @extend .tab-icon;
+  background: {
+    image: url("../images/index/grzx.png");
+    size: 40px;
+  }
+}
+
+.icon-personal.selected {
+  background: {
+    image: url("../images/index/grzx-s.png");
+  };
+}

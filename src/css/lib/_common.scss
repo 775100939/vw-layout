@@ -1,0 +1,58 @@
+$theme-color: #ee9b18; //主题颜色，包括字体颜色，背景颜色，边框颜色
+$padding: 20px;
+$font-size-extra: 2vmin; //用于计算字体
+$nav-bar-height: 88px;
+
+@mixin theme-color {
+  background-color: $theme-color;
+  color: $theme-color;
+}
+
+/*@mixin padding-lr {
+  padding: {
+    left: $padding;
+    right: $padding;
+  };
+}
+@mixin margin-lr {
+  margin: {
+    left: $padding;
+    right: $padding;
+  };
+}*/
+
+@mixin distance-lr($pro,$distance:$padding) {
+  #{$pro}-left: $distance;
+  #{$pro}-right: $distance;
+}
+
+@mixin rounded-corner($radius) {
+  -webkit-border-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
+  -moz-border-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
+  border-radius: calc(#{"#{$radius}+#{$font-size-extra}"})
+}
+
+@mixin part-rounded-corner($vertical,$horizon,$radius) {
+  -webkit-border-#{$vertical}-#{$horizon}-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
+  -moz-border-#{$vertical}-#{$horizon}-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
+  border-#{$vertical}-#{$horizon}-radius: calc(#{"#{$radius}+#{$font-size-extra}"})
+}
+
+@mixin icon-pro {
+  background: {
+    position: center center;
+    repeat: no-repeat;
+    display: block;
+  };
+}
+
+@mixin font-size($expression) {
+  font-size: calc(#{"#{$expression}+#{$font-size-extra}"});
+}
+
+@mixin fixed{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+}

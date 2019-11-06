@@ -1,0 +1,57 @@
+@import "./lib/common";
+
+.cus-service {
+  img {
+    width: 44px;
+    height: 40px;
+    vertical-align: middle;
+  }
+}
+
+.tel {
+  img {
+    width: 39px;
+    height: 40px;
+    vertical-align: middle;
+    margin-left: 30px;
+  }
+}
+
+.msg {
+  img {
+    width: 40px;
+    height: 38px;
+    vertical-align: middle;
+    margin-left: 30px;
+  }
+}
+
+.am-navbar.bar-customize {
+  height: $nav-bar-height;
+  background-color: $theme-color;
+  .am-navbar-left{
+    padding-left: 0;
+  }
+  .am-navbar-title{
+    @include font-size(17px)
+  }
+  .am-navbar-right{
+    margin-right: $padding;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  top: $nav-bar-height;
+  z-index: 1;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+
+  .wrapper-inner {
+    height: calc(100% + 1px);
+  }
+}
+

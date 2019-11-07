@@ -5,10 +5,12 @@
   "dependencies": {
     "@babel/core": "7.4.3",
     "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@loadable/component": "latest",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "antd-mobile": "^2.2.14",
+    "axios": "latest",
     "babel-eslint": "10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.5",
@@ -53,6 +55,7 @@
     "postcss-safe-parser": "4.0.1",
     "postcss-viewport-units": "^0.1.6",
     "postcss-write-svg": "^3.0.1",
+    "rc-form": "^2.4.9",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
@@ -69,8 +72,7 @@
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "4.2.0",
-    "@loadable/component": "latest"
+    "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

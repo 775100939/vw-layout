@@ -9,7 +9,7 @@ class Follow extends Component {
 
   render() {
     const {history} = this.props;
-    console.log("3")
+    console.log("33")
     return (
       <Fragment>
         <Nav title="跟单"/>

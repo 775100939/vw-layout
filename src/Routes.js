@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 
 const Layout = loadable(() => import('./Layout'));
 const InviteCode = loadable(() => import('./pages/personal/InviteCode/'));
+const Login = loadable(() => import('./pages/Login'));
 
 export default class Routes extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class Routes extends Component {
         <Route path='/lottery' component={Layout}/>
         <Route exact path='/personal' component={Layout}/>
         <Route path='/personal/invitecode' component={InviteCode}/>
+        <Route path='/login' component={Login}/>
 
       </Switch>
     </Router>)

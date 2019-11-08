@@ -4,6 +4,7 @@ import {List, InputItem} from "antd-mobile";
 import {createForm} from 'rc-form';
 import './index.scss';
 
+@createForm()
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,6 @@ class Index extends Component {
       <Fragment>
         <Nav title="登录" onLeftClick={() => this.props.history.goBack()}/>
         <Container>
-          <List renderHeader={() => 'Custom title（text / image / empty)'}>
             <InputItem
               {...getFieldProps('input3')}
               placeholder="no label"
@@ -31,7 +31,6 @@ class Index extends Component {
                 width: '22px'
               }}/>
             </InputItem>
-          </List>
         </Container>
       </Fragment>
     );

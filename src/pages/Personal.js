@@ -25,6 +25,11 @@ class Personal extends Component {
     super(props);
   }
 
+  goLogin = () => {
+    const {history} = this.props;
+    history.push({pathname: '/login'});
+  };
+
   render() {
     const {history} = this.props;
     console.log("5")
@@ -51,7 +56,7 @@ class Personal extends Component {
                          title="立即登录/注册"/>
                   </a>
                 </div>
-                <div className="user-name"><a href="/user/login">立即登录&nbsp;/&nbsp;注册</a>
+                <div className="user-name"><a href="javascript:void(0)" onClick={this.goLogin}>立即登录&nbsp;/&nbsp;注册</a>
                 </div>
               </Flex>
               <Flex className="assets fs28">

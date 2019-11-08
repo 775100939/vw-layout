@@ -134,7 +134,7 @@ const responseError = (err) => {
       case 401:
         message.error('未授权，请登录!');
         setTimeout(() => {
-          window.location.href = '/login';
+          window.location.href = '/Login';
         }, 1000);
         break;
       case 403:

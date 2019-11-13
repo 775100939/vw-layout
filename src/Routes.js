@@ -4,7 +4,8 @@ import loadable from '@loadable/component';
 
 const Layout = loadable(() => import('./Layout'));
 const InviteCode = loadable(() => import('./pages/personal/InviteCode/'));
-const Login = loadable(() => import('./pages/Login'));
+const Login = loadable(() => import('./pages/User/Login'));
+const Register = loadable(() => import('./pages/User/Register'));
 
 export default class Routes extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class Routes extends Component {
         <Route exact path='/personal' component={Layout}/>
         <Route path='/personal/invitecode' component={InviteCode}/>
         <Route path='/login' component={Login}/>
+        <Route path='/register' component={Register}/>
 
       </Switch>
     </Router>)

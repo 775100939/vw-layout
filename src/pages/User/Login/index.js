@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import {Nav, Container} from '../../components/Common';
-import {List, InputItem, Flex, Checkbox} from "antd-mobile";
+import {Nav, Container} from '../../../components/Common';
+import {List, InputItem, Flex} from "antd-mobile";
 import {createForm, formShape} from 'rc-form';
-import Images from '../../utils/image';
-import './index.scss';
-
-const AgreeItem = Checkbox.AgreeItem;
+import {withRouter} from 'react-router-dom';
+import Checkbox from 'rc-checkbox';
+import Images from '../../../utils/image';
+import 'rc-checkbox/assets/index.css';
+import '../index.scss';
 
 class Password extends Component {
   static propTypes = {
@@ -53,7 +54,7 @@ class Password extends Component {
     const {getFieldProps, getFieldDecorator, getFieldError, isFieldValidating} = this.props.form;
     return (
       <Flex className="input-item">
-        <span className="ipt">
+        <div className="ipt">
           <input type="password"
                  placeholder="请输入密码"
                  {...getFieldProps('password', {
@@ -70,47 +71,70 @@ class Password extends Component {
               {required: true}
             ]
           })(<input type="text" placeholder="请输入密码"/>)}*/}
-        </span>
-        <span className="img">
+        </div>
+        <div className="img">
           {
             value.length > 0 && <img src={imgSrc} onClick={this.onClickEye}/>
           }
-          </span>
+          </div>
       </Flex>)
   }
 }
 
-
+@withRouter
 class Index extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      checked: false,
+    }
   }
 
+  onChange = (e) => {
+    const checked = e.target.checked;
+    this.setState({checked});
+  };
+
+  goRegister = () => {
+    const {history} = this.props;
+    history.push({pathname: '/register'});
+  };
+
   render() {
+    const {checked} = this.state;
     const {form} = this.props
     const {getFieldDecorator} = form;
     return (
       <Fragment>
         <Nav title="登录" onLeftClick={() => this.props.history.goBack()}/>
         <Container>
-          <div className="login-sec">
+          <div className="user-sec">
             <form onSubmit={this.onSubmit}>
               <Flex className="input-item">
-                <span className="ipt">
+                <div className="ipt">
                   {getFieldDecorator('userName', {
                     rules: [
                       {required: true}
                     ]
                   })(<input type="text" placeholder="请输入用户名/手机号码"/>)}
-                </span>
+                </div>
               </Flex>
               <Password form={form}/>
-              <Flex className="auto-login" justify="between">
-                <AgreeItem className="auto-lg" onChange={e => console.log('checkbox', e)}>
-                  自动登录
-                </AgreeItem>
+              <Flex className="check-item" justify="between">
+                <label className="self-checkbox">
+                  <Checkbox
+                    checked={checked}
+                    onChange={this.onChange}
+                    disabled={false}
+                  />
+                  &nbsp;自动登录
+                </label>
                 <span className="forgot">忘记密码?</span>
               </Flex>
+              <div className="buttons">
+                <button className="login" type="button">登录</button>
+                <button className="register" type="button" onClick={this.goRegister}>新用户注册</button>
+              </div>
             </form>
           </div>
         </Container>

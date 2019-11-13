@@ -1,0 +1,122 @@
+@import "../../css/lib/common";
+
+.user-sec {
+  @include distance-lr(padding);
+  padding-top: 30px;
+  @include font-size(14px);
+
+  .self-checkbox {
+    $my-border-color: #bbbbba;
+
+    .rc-checkbox-input:focus + .rc-checkbox-inner, .rc-checkbox:hover .rc-checkbox-inner {
+      border-color: $my-border-color;
+    }
+
+    .rc-checkbox-checked {
+      .rc-checkbox-inner {
+        background-color: #fff;
+        border-color: $my-border-color;
+
+        &::after {
+          border-color: $my-border-color;
+        }
+      }
+    }
+  }
+
+  .input-item {
+    height: 99px;
+    line-height: 99px;
+    border-bottom: 1px solid #d8d8d8;
+    overflow: hidden;
+
+    .ipt {
+      width: 85%;
+
+      input {
+        //background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border: none;
+        text-align: left;
+        padding-left: 10px;
+        background-color: transparent;
+      }
+    }
+
+    .img {
+      width: 15%;
+      text-align: center;
+
+      img {
+        width: 42px;
+        height: 27px;
+      }
+    }
+  }
+  .verify-code.input-item,.invite-code.input-item{
+    border-bottom: none;
+    .ipt {
+      width: 68%;
+      border-bottom: 1px solid #d8d8d8;
+    }
+  }
+  .verify-code.input-item {
+    .get-code {
+      width: 30%;
+      text-align: right;
+      position: relative;
+      height: 100%;
+
+      button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 72px;
+        line-height: 1;
+        border: 4px solid #ef0600;
+        color: #ef0600;
+        text-align: center;
+        @include rounded-corner(0);
+        background-color: #fff;
+      }
+    }
+  }
+  .invite-code.input-item {
+  }
+
+  .check-item {
+    @include font-size(12px);
+    margin-top: 29px;
+    color: #9c9c9c;
+
+
+    .forgot {
+      color: #ef0700;
+    }
+
+    .protocol {
+      color: #6479e4;
+    }
+  }
+
+  .buttons {
+    @include font-size(17px);
+    margin-top: 85px;
+
+    .login {
+      @include big-button;
+      border-color: $theme-color;
+      background-color: $theme-color;
+      color: #fff;
+    }
+
+    .register {
+      @include big-button;
+      border-color: #999;
+      margin-top: 42px;
+      color: #999;
+    }
+  }
+}
+

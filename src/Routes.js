@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import loadable from '@loadable/component';
 
 const Layout = loadable(() => import('./Layout'));
-const InviteCode = loadable(() => import('./pages/personal/InviteCode/'));
+const InviteCode = loadable(() => import('./pages/Personal/InviteCode'));
 const Login = loadable(() => import('./pages/User/Login'));
 const Register = loadable(() => import('./pages/User/Register'));
 

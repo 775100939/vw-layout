@@ -1,6 +1,7 @@
 $theme-color: #ee9b18; //主题颜色，包括字体颜色，背景颜色，边框颜色
 $padding: 20px;
 $font-size-extra: 2vmin; //用于计算字体
+$border-radius-extra: 1vmin; //用于计算字体
 $nav-bar-height: 88px;
 
 @mixin theme-color {
@@ -27,9 +28,9 @@ $nav-bar-height: 88px;
 }
 
 @mixin rounded-corner($radius) {
-  -webkit-border-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
-  -moz-border-radius: calc(#{"#{$radius}+#{$font-size-extra}"});
-  border-radius: calc(#{"#{$radius}+#{$font-size-extra}"})
+  -webkit-border-radius: calc(#{"#{$radius}+#{$border-radius-extra}"});
+  -moz-border-radius: calc(#{"#{$radius}+#{$border-radius-extra}"});
+  border-radius: calc(#{"#{$radius}+#{$border-radius-extra}"})
 }
 
 @mixin part-rounded-corner($vertical,$horizon,$radius) {
@@ -42,17 +43,26 @@ $nav-bar-height: 88px;
   background: {
     position: center center;
     repeat: no-repeat;
-    display: block;
   };
+  display: block;
 }
 
 @mixin font-size($expression) {
   font-size: calc(#{"#{$expression}+#{$font-size-extra}"});
 }
 
-@mixin fixed{
+/*@mixin fixed{
   position: fixed;
   width: 100%;
   left: 0;
   z-index: 100;
+}*/
+
+@mixin big-button{
+  height: 80px;
+  line-height: 1;
+  @include rounded-corner(3px);
+  border: 1px solid #7f7f7f;
+  width: 100%;
+  background-color: #fff;
 }

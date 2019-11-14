@@ -1,0 +1,16 @@
+@import "../../css/lib/common";
+
+.download {
+  padding-left: $padding;
+  display: block;
+  @include font-size(17px);
+
+  img {
+    width: 32px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+  }
+}
+

@@ -27,7 +27,9 @@
 }
 
 .am-navbar.bar-customize {
+  width: 100%;
   height: $nav-bar-height;
+  line-height: 1;
   background-color: $theme-color;
   .am-navbar-left{
     padding-left: 0;
@@ -40,18 +42,29 @@
   }
 }
 
-.wrapper {
-  position: absolute;
-  width: 100%;
-  top: $nav-bar-height;
-  z-index: 1;
-  bottom: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background-color: #fff;
 
-  .wrapper-inner {
-    height: calc(100% + 1px);
+
+.app-container{
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .wrapper {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .wrapper-inner {
+      height: calc(100% + 1px);
+    }
   }
 }
-
